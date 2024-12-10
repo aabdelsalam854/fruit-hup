@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:frute_hup/core/errors/exception.dart';
@@ -49,7 +51,9 @@ class AuthRepoIpm implements AuthRepo {
     try {
       final user = await firebaseAuthServices.loginWithEmailAndPassword(
           email: email, password: password);
-      return right(UserModel.fromFirebase(user));
+      var userEntity = await getUserData(uid: user.uid);
+      log(userEntity.toString());
+      return right(userEntity);
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
     }
@@ -78,6 +82,14 @@ class AuthRepoIpm implements AuthRepo {
   @override
   Future addUserData({required UserEntity user}) async {
     await databaseServices.addData(
-        data: user.toJson(), path: EndPoint.addUserData);
+        docId: user.uid, data: user.toJson(), path: EndPoint.addUserData);
+  }
+
+  @override
+  Future<UserEntity> getUserData({required String uid}) async {
+    var userData =
+        await databaseServices.getData(path: EndPoint.addUserData, docId: uid);
+          log(userData.toString());
+    return UserModel.fromJson(userData);
   }
 }
