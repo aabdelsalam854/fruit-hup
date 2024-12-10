@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نسيان كلمة المرور"),
         "forgetPasswordButton":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور "),
+        "homeAppBarTitle": MessageLookupByLibrary.simpleMessage("صباح الخير !"),
         "loginAppBarTitle": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "loginDivider": MessageLookupByLibrary.simpleMessage("او"),
         "loginDontHaveAccount":

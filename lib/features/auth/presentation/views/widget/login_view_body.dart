@@ -8,6 +8,7 @@ import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/widget/custom_button.dart';
 import '../../../../../core/widget/custom_text_form_field.dart';
 import '../../../../../generated/l10n.dart';
+import '../../../../home/presentation/view/home_view.dart';
 import '../../maneger/login_cubit/login_cubit.dart';
 import 'check_email_prompt.dart';
 import 'or_divider.dart';
@@ -40,9 +41,10 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
         } else if (state is LoginError) {
           customSnackBar(context, message: state.message);
-        }
+        } 
       },
       builder: (context, state) {
         return SingleChildScrollView(

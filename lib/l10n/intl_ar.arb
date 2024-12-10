@@ -37,9 +37,10 @@
     "changePasswordButton": "أنشيء كلمة مرور جديدة",
     "changePasswordPassword": "كلمة المرور ",
     "changePasswordConfirmPassword": "تاكيد كلمة المرور",
-    "changePasswordTitle": "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول"
+    "changePasswordTitle": "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول",
     
   
+    "homeAppBarTitle":"صباح الخير !"
 
 
 

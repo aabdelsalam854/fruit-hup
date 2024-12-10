@@ -33,7 +33,20 @@
     "changePasswordButton": "Create a New Password",
     "changePasswordPassword": "Password",
     "changePasswordConfirmPassword": "Confirm Password",
-    "changePasswordTitle": "Create a new password to log in"
+    "changePasswordTitle": "Create a new password to log in",
+
+
+
+"homeAppBarTitle":"Good Morning !"
+
+
+
+
+
+
+
+
+
 
 
 }

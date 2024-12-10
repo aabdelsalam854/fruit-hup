@@ -4,6 +4,7 @@ import '../../features/auth/presentation/views/forget_password_view.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/otv_view.dart';
 import '../../features/auth/presentation/views/singup_view.dart';
+import '../../features/home/presentation/view/home_view.dart';
 import '../../features/on_boarding/presentation/view/on_boarding_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 
@@ -23,6 +24,8 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const ChangePasswordView());
     case OtvView.routeName:
       return MaterialPageRoute(builder: (_) => const OtvView());
+         case HomeView.routeName:
+      return MaterialPageRoute(builder: (_) => const HomeView());
     default:
       return MaterialPageRoute(builder: (_) => const SplashView());
   }

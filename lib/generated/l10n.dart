@@ -329,6 +329,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Good Morning !`
+  String get homeAppBarTitle {
+    return Intl.message(
+      'Good Morning !',
+      name: 'homeAppBarTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
