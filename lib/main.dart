@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:frute_hup/firebase_options.dart';
-import 'core/constant/bloc_observer.dart';
+import 'core/services/bloc_observer.dart';
 import 'core/helper_functions/app_route.dart';
 import 'core/styles/app_theme.dart';
 import 'core/styles/cubit/theme_cubit.dart';
@@ -14,11 +14,11 @@ import 'generated/l10n.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await setupServiceLocator();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  
+    await setupServiceLocator();
 Bloc.observer = MyBlocObserver();
   runApp(const FruitHup());
 }

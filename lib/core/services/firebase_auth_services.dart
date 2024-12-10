@@ -11,7 +11,9 @@ class FirebaseAuthServices {
   // FirebaseAuthServices._();
 
   Future<User> createUserWithEmailAndPassword(
-      {required String email, required String password}) async {
+      {required String email,
+      required String password,
+      required String name}) async {
     try {
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -60,6 +62,10 @@ class FirebaseAuthServices {
     return (await FirebaseAuth.instance
             .signInWithCredential(facebookAuthCredential))
         .user!;
+  }
+
+  Future deleteUser() async {
+    await FirebaseAuth.instance.currentUser!.delete();
   }
 
   String _mapFirebaseAuthExceptionToString(FirebaseAuthException e) {
